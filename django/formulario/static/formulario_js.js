@@ -1,4 +1,10 @@
 const ficha = document.getElementById("ficha");
+const nombre = document.getElementById("nombre")
+const apellidos = document.getElementById("apellidos")
+const correo = document.getElementById("correo")
+const telefono = document.getElementById("telefono")
+const genero = document.getElementById("genero")
+
 /**--------------------
  * para validar que lo que sea valodo sean letras 
  * let declara variables
@@ -108,4 +114,18 @@ const val_telefono = function () {
 }
 telefono.addEventListener("blur", val_telefono);
 
+const val_genero = function (conf) {
+  
+  let genero_check = 0
 
+  for (const hit of genero) {
+    if (hit.checked) {
+      genero_check = hit.value
+      break
+    }
+  }
+  if (genero_check === 0) {
+    conf.preventDefault()
+    alert ("mama huevo")
+  }
+}
